@@ -14,6 +14,8 @@
 		A166AD8A2CAFD23A00DF509D /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A166AD892CAFD23A00DF509D /* SegmentView.swift */; };
 		A166AD8C2CB1A12700DF509D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A166AD8B2CB1A12700DF509D /* SearchViewController.swift */; };
 		A166AD8E2CB1A33000DF509D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A166AD8D2CB1A33000DF509D /* SearchTableViewCell.swift */; };
+		A166AD912CB43E7A00DF509D /* ViewControllerA.swift in Sources */ = {isa = PBXBuildFile; fileRef = A166AD8F2CB43E7A00DF509D /* ViewControllerA.swift */; };
+		A166AD922CB43E7A00DF509D /* ViewControllerA.xib in Resources */ = {isa = PBXBuildFile; fileRef = A166AD902CB43E7A00DF509D /* ViewControllerA.xib */; };
 		A1FC585B2C9C997200CB26A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC585A2C9C997200CB26A4 /* AppDelegate.swift */; };
 		A1FC58642C9C997300CB26A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FC58632C9C997300CB26A4 /* Assets.xcassets */; };
 		A1FC58672C9C997300CB26A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1FC58652C9C997300CB26A4 /* LaunchScreen.storyboard */; };
@@ -50,6 +52,8 @@
 		A166AD892CAFD23A00DF509D /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		A166AD8B2CB1A12700DF509D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A166AD8D2CB1A33000DF509D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		A166AD8F2CB43E7A00DF509D /* ViewControllerA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerA.swift; sourceTree = "<group>"; };
+		A166AD902CB43E7A00DF509D /* ViewControllerA.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewControllerA.xib; sourceTree = "<group>"; };
 		A1FC58572C9C997200CB26A4 /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FC585A2C9C997200CB26A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FC58632C9C997300CB26A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		A166AD932CB43EFC00DF509D /* ScreenA */ = {
+			isa = PBXGroup;
+			children = (
+				A166AD8F2CB43E7A00DF509D /* ViewControllerA.swift */,
+				A166AD902CB43E7A00DF509D /* ViewControllerA.xib */,
+			);
+			path = ScreenA;
+			sourceTree = "<group>";
+		};
 		A1FC584E2C9C997200CB26A4 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +147,7 @@
 		A1FC586E2C9C998A00CB26A4 /* Scenses */ = {
 			isa = PBXGroup;
 			children = (
+				A166AD932CB43EFC00DF509D /* ScreenA */,
 				A166AD832CAF9E7600DF509D /* TabBarController.swift */,
 				A1FC587A2C9C9BBA00CB26A4 /* Login */,
 				A1FC58962CA27DE800CB26A4 /* Home */,
@@ -287,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A166AD922CB43E7A00DF509D /* ViewControllerA.xib in Resources */,
 				A1FC58672C9C997300CB26A4 /* LaunchScreen.storyboard in Resources */,
 				A1FC58642C9C997300CB26A4 /* Assets.xcassets in Resources */,
 			);
@@ -348,6 +363,7 @@
 				A1FC58872C9DE35E00CB26A4 /* CustomViewButton.swift in Sources */,
 				A166AD802CAEF2D200DF509D /* UserProfileViewController.swift in Sources */,
 				A166AD7D2CADA99700DF509D /* ActivityTableViewCell.swift in Sources */,
+				A166AD912CB43E7A00DF509D /* ViewControllerA.swift in Sources */,
 				A166AD8A2CAFD23A00DF509D /* SegmentView.swift in Sources */,
 				A1FC588B2C9DEAB000CB26A4 /* VerifyViewController.swift in Sources */,
 				A1FC588F2C9F34D700CB26A4 /* HomeViewController.swift in Sources */,
