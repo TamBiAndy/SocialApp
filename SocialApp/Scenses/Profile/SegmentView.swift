@@ -49,14 +49,19 @@ class SegmentView: UIView {
         return view
     }()
     
-    lazy var shotFlowLayout: UICollectionViewFlowLayout = {
-       let flowLayout = UICollectionViewFlowLayout()
-        let screenWidth = (UIScreen.main.bounds.width - 54)
-        let cellWidth = screenWidth/2
-        flowLayout.itemSize = .init(width: cellWidth, height: cellWidth * 190/155)
-        flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 14
-        flowLayout.minimumInteritemSpacing = 14
+//    lazy var shotFlowLayout: UICollectionViewFlowLayout = {
+//       let flowLayout = UICollectionViewFlowLayout()
+//        let screenWidth = (UIScreen.main.bounds.width - 54)
+//        let cellWidth = screenWidth/2
+//        flowLayout.itemSize = .init(width: cellWidth, height: cellWidth * 190/155)
+//        flowLayout.scrollDirection = .vertical
+//        flowLayout.minimumLineSpacing = 14
+//        flowLayout.minimumInteritemSpacing = 14
+//        return flowLayout
+//    }()
+    
+    lazy var shotFlowLayout: UICollectionViewCompositionalLayout = {
+        let flowLayout = creatShotFlowLayout()
         return flowLayout
     }()
     
@@ -121,6 +126,78 @@ class SegmentView: UIView {
                 break
             }
         }
+    }
+    
+    private func creatShotFlowLayout() -> UICollectionViewCompositionalLayout {
+        let item1 = NSCollectionLayoutItem(
+            layoutSize: .init(widthDimension: .fractionalWidth(1),
+                              heightDimension: .absolute(190)
+                             )
+            
+        )
+        item1.contentInsets = .init(top: 0, leading: 0, bottom: 15, trailing: 8)
+        
+        let item2 = NSCollectionLayoutItem(
+            layoutSize: .init(widthDimension: .fractionalWidth(1),
+                              heightDimension: .absolute(190)
+                             )
+        )
+        item2.contentInsets = .init(top: 0, leading: 0, bottom: 8, trailing: 8)
+        
+        let item3 = NSCollectionLayoutItem(
+            layoutSize: .init(widthDimension: .fractionalWidth(1),
+                              heightDimension: .absolute(65)
+                             )
+        )
+        item3.contentInsets = .init(top: 7, leading: 0, bottom: 8, trailing: 8)
+        
+        
+        let verticalGroup1 = NSCollectionLayoutGroup.vertical(
+            layoutSize: .init(widthDimension: .fractionalWidth(1/2),
+                              heightDimension: .absolute(445)),
+            subitems: [item1, item2, item3])
+        verticalGroup1.contentInsets = .init(top: 0, leading: 7, bottom: 8, trailing: 0)
+        
+        let item4 = NSCollectionLayoutItem(
+            layoutSize: .init(widthDimension: .fractionalWidth(1),
+                              heightDimension: .absolute(100)
+                             )
+        )
+        item4.contentInsets = .init(top: 0, leading: 7, bottom: 8, trailing: 0)
+        
+        let item5 = NSCollectionLayoutItem(
+            layoutSize: .init(widthDimension: .fractionalWidth(1),
+                              heightDimension: .absolute(155)
+                             )
+        )
+        item5.contentInsets = .init(top: 0, leading: 7, bottom: 8, trailing: 0)
+        
+        let item6 = NSCollectionLayoutItem(
+            layoutSize: .init(widthDimension: .fractionalWidth(1),
+                              heightDimension: .absolute(190)
+                             )
+        )
+        item6.contentInsets = .init(top: 0, leading: 7, bottom: 8, trailing: 0)
+        
+        
+        let verticalGroup2 = NSCollectionLayoutGroup.vertical(
+            layoutSize: .init(widthDimension: .fractionalWidth(1/2),
+                              heightDimension: .absolute(445)),
+            subitems: [item4, item5, item6]
+        )
+        verticalGroup2.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: .init(widthDimension: .fractionalWidth(1),
+                              heightDimension: .fractionalHeight(1)),
+            subitems: [verticalGroup1, verticalGroup2]
+        )
+        group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 15, trailing: 0)
+        
+        return UICollectionViewCompositionalLayout(section: section)
     }
     
     private func setupView() {

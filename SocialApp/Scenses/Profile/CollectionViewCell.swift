@@ -15,26 +15,33 @@ class ShotCollectionViewCell: UICollectionViewCell {
         .with(\.contentMode, setTo: .scaleToFill)
         .with(\.clipsToBounds, setTo: true)
         .with(\.layer.cornerRadius, setTo: 10)
-        .with(\.image, setTo: UIImage(named: "topImgLogin"))
+        
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCell()
+        layoutSubviews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        shotImgView.frame = contentView.bounds
+    }
+    
     private func setupCell() {
+        contentView.clipsToBounds = true
         contentView.addSubview(shotImgView)
-        shotImgView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-            let screenWidth = (UIScreen.main.bounds.width - 54)
-            let cellWidth = screenWidth/2
-            make.width.equalTo(cellWidth)
-            make.height.equalTo(cellWidth * 190/155)
-        }
+//        shotImgView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//            let screenWidth = (UIScreen.main.bounds.width - 54)
+//            let cellWidth = screenWidth/2
+//            make.width.equalTo(cellWidth)
+//            make.height.equalTo(cellWidth * 190/155)
+//        }
     }
 }
 
